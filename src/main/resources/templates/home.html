@@ -2,25 +2,55 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
 </head>
 <body>
 
-	<div th:each="pedido : ${pedidos}">
+	<div class="container" th:each="pedido : ${pedidos}">
+		<div class="card">
+
+			<div class="card-header" th:text="${pedido.nome}">[Nome]</div>
+			<div class="card-body">
+				
+				<div class="row">
+					<div class="col-sm-8  col-12  mb-4">
+						
+						<div class="row">
+							<div class="col-md-5">
+								<u>Valor</u>: <span th:text="${pedido.valor}">[Valor]</span>
+							</div>
+							<div class="col-md-7">
+								<u>Data de entrega</u>: 
+								<td th:text="${#temporals.format(pedido.data, 'dd/MM/yyyy')}">[Data]</td>
+							</div>
+						</div>
+						
+						<div>
+							<u>Produto</u> <input class="form-control"
+								th:value="${pedido.urlProduto}">
+						</div>
 	
-		<div>Nome do produto: </div><span th:text="${pedido.nome}">[Nome]</span>
-		<div>Valor: </div><span th:text="${pedido.valor}">[Valor]</span>
-		<div>Data de entrega:</div><td th:text="${#temporals.format(pedido.data, 'dd-MM-yyyy')}">[Data]</td>
-		
-		<div>Produto</div><input th:value="${pedido.urlProduto}">
-		
-		<div>
-			Descrição do produto<textarea th:text="${pedido.descricao}"></textarea>
-		</div>
-		
-		<div>
-			<img th:src="${pedido.urlImagem}"/>
-		</div>
+						<div>
+							<u>Descrição do produto</u>
+							<textarea class="form-control" th:text="${pedido.descricao}"></textarea>
+						</div>
 	
+					</div>
+					<div class="col-sm-4  col-12">
+	
+						<div>
+							<img class="img-thumbnail" th:src="${pedido.urlImagem}" />
+						</div>
+	
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
 	</div>
 
 </body>
