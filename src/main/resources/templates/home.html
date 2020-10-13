@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<div th:each="pedido : ${pedidos}">
+	
+		<div>Nome do produto: </div><span th:text="${pedido.nome}">[Nome]</span>
+		<div>Valor: </div><span th:text="${pedido.valor}">[Valor]</span>
+		<div>Data de entrega:</div><td th:text="${#temporals.format(pedido.data, 'dd-MM-yyyy')}">[Data]</td>
+		
+		<div>Produto</div><input th:value="${pedido.urlProduto}">
+		
+		<div>
+			Descrição do produto<textarea th:text="${pedido.descricao}"></textarea>
+		</div>
+		
+		<div>
+			<img th:src="${pedido.urlImagem}"/>
+		</div>
+	
+	</div>
+
+</body>
+</html>
