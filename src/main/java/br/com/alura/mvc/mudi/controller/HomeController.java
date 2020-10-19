@@ -7,19 +7,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.alura.mvc.mudi.dao.PedidoDao;
 import br.com.alura.mvc.mudi.model.Pedido;
 
 @Controller
+@RequestMapping("home")
 public class HomeController {
 
 	@Autowired
 	private PedidoDao pedidoDao;
 	
-	@GetMapping("/home")
 	public String home(Model model) {
+		System.out.println("chegou");
+		
 		Pedido pedido = new Pedido();
 		pedido.setNome("Echo dot");
 		pedido.setData(LocalDateTime.now());
