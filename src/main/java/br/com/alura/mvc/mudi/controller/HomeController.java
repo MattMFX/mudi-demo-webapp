@@ -15,7 +15,7 @@ import br.com.alura.mvc.mudi.model.Pedido;
 public class HomeController {
 
 	@GetMapping("/home")
-	public String helloWorld(Model model) {
+	public String home(Model model) {
 		Pedido pedido = new Pedido();
 		pedido.setNome("Echo dot");
 		pedido.setData(LocalDateTime.now());
