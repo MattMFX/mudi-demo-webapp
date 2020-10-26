@@ -9,9 +9,7 @@
 </head>
 <body>
 
-	<div class="container" th:each="pedido : ${pedidos}">
-
-		<div class="jumbotron mb-0">
+	<div class="jumbotron mb-0">
 			<h1 class="display-4">Meus pedidos</h1>
 		</div>
 
@@ -31,6 +29,8 @@
 				<button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button>
 			</a>
 		</nav>
+
+	<div class="container" th:each="pedido : ${pedidos}">
 
 		<div class="card">
 

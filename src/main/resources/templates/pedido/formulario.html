@@ -9,11 +9,37 @@
 </head>
 <body>
 
+	<div class="container">
 
-<div>
-		<h1>oaoaoao</h1>
-	</div>	
-	
+		<div class="jumbotron mb-4">
+			<h1 class="display-4">Novo pedido</h1>
+		</div>
+
+		<form action="/pedido/novo" method="post">
+			<div class="form-group row">
+				<label for="nomeProduto">Nome do produto</label> 
+				<input class="form-control col-5" type="text" name="nomeProduto" placeholder="Nome do produto">
+				<small>Digite o nome do produto</small>
+			      
+				<label for="valor">URL</label> 
+				<input class="form-control col-4" type="text" name="ulrProduto" placeholder="Url produto">
+				<small>Cole aqui a url do produto</small>
+				
+				<label for="valor">Imagem</label> 
+				<input class="form-control col-4" type="text" name="urlImagem" placeholder="Url da imagem do produto">
+				<small>Copie a url da imagem e cole aqui</small>
+			</div>
+			
+			<div class="row">
+				<label class="mr-4" for="descricao">Descrição</label>
+				<textarea rows="5" cols="64" placeholder="Descrição do produto" type="text" name="descricao"></textarea>
+				<small>Descreva o produto</small>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+	</div>
 
 </body>
 </html>
